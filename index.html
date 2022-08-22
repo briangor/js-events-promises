@@ -9,49 +9,57 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-aqua-100">
-    <h3 class="text-xl text-blue-600 text-center">JS Events and Promises</h3>
+<body class="bg-blue-50">
+    <h3 class="text-xl text-blue-600 text-center py-6">JS Events and Promises</h3>
     <div class="events border p-10">
-        <h4>Built-in Events</h4>
-        <div class="px-2 mt-2">
+        <h4 class="text-xl text-blue-800">Built-in Events</h4>
+        <div class="px-2 mt-3">
             <h5 class="text-sm text-gray-500">Example: Illustrating built-in 'click' event</h5>
-            <label>Enter name: </label>
+            <label class="text-sm text-gray-700">Enter name: </label>
             <input type="text" id="evt1_input" class="border border-gray-600 rounded-md mt-2 p-1">
             <button id="evt1_btn" class="border p-2 rounded-md block mt-2 bg-blue-500 text-white hover:bg-blue-400">Generate sentence</button>
             <p id="evt1_output"></p>
         </div>
-    </div>
-    <div class="customevents border p-10">
-        <h4>Custom Events</h4>
-        <div class="px-2 mt-8">
-            <h5 class="text-sm text-gray-500" id="evt2_input">Example: Illustrating custom event</h5>
-            <label>Enter value: </label>
-            <input type="text" id="dt_input" class="border border-gray-600 rounded-md mt-2 p-1">
-            <button id="dt_btn" class="border p-2 rounded-md block mt-2 bg-blue-500 text-white hover:bg-blue-400">Fire custom event</button>
-            <p id="dt_output"></p>
+        <div class="px-2 mt-3">
+            <h5 class="text-sm text-gray-500">Example 2: Hover over button to change body color</h5>
+            <button id="evt2_btn" class="border p-2 rounded-md  mt-2 bg-blue-500 text-white hover:bg-blue-400">Hover</button>
+            <button id="evt2_btn2" class="border p-2 rounded-md  mt-2 bg-blue-500 text-white hover:bg-blue-400">Reset</button>
+            <span class="text-sm text-gray-700">Color: 
+                <span id="evt2_output"></span>
+            </span>
         </div>
     </div>
     <div class="customevents border p-10">
-        <h4>Dynamic Typing</h4>
+        <h4 class="text-xl text-blue-800">Custom Events</h4>
+        <div class="px-2 mt-8">
+            <h5 class="text-sm text-gray-500">Example: Illustrating custom event</h5>
+            <label class="text-sm text-gray-700">Enter value: </label>
+            <input type="text" id="c_evt1_input" class="border border-gray-600 rounded-md mt-2 p-1">
+            <button id="c_evt1_btn" class="border p-2 rounded-md block mt-2 bg-blue-500 text-white hover:bg-blue-400">Fire custom event</button>
+            <p id="c_evt1_output" class="text-sm text-gray-700"></p>
+        </div>
+    </div>
+    <div class="dynamictyping border p-10">
+        <h4 class="text-xl text-blue-800">Dynamic Typing</h4>
         <div class="px-2 mt-8">
             <h5 class="text-sm text-gray-500">Example: Illustrating dynamic typing using one variable</h5>
-            <button id="evt2_btn" class="border p-2 rounded-md block mt-2 bg-blue-500 text-white hover:bg-blue-400">Fire custom event</button>
-            <p id="evt2_output"></p>
+            <label class="text-sm text-gray-700">Enter value: </label>
+            <input type="text" id="dt_input" class="border border-gray-600 rounded-md mt-2 p-1">
+            <button id="dt_btn" class="border p-2 rounded-md block mt-2 bg-blue-500 text-white hover:bg-blue-400">Check variable and type</button>
+            <p id="dt_output" class="text-sm text-gray-700"></p>
         </div>
     </div>
-    <div class="promises border p-10">
-        <h4>Promises</h4>
+    <div class="promises border p-10 mb-24">
+        <h4 class="text-xl text-blue-800">Promises</h4>
         <div class="px-2 mt-2">
-            <h5 class="text-sm text-gray-500">Example 1: Illustrating built-in 'click' event</h5>
-            <label>Enter name: </label>
-            <input type="text" id="evt1_input" class="border border-gray-600 rounded-md mt-2 p-1">
-            <button id="evt1_btn" class="border p-2 rounded-md block mt-2 bg-blue-500 text-white hover:bg-blue-400">Generate sentence</button>
-            <p id="evt1_output"></p>
+            <h5 class="text-sm text-gray-500">Example: Illustrating JS Promise</h5>
+            <h6 class="text-sm text-gray-700">Wait 2 seconds (2000 milliseconds) for a message after button click.</h6>
+            <label class="text-sm text-gray-700">Enter any string/value: </label>
+            <input type="text" id="p_input" class="border border-gray-600 rounded-md mt-2 p-1">
+            <button id="p_btn" class="border p-2 rounded-md block mt-2 bg-blue-500 text-white hover:bg-blue-400">Generate Promise</button>
+            <p id="p_output" class="text-sm text-gray-700"></p>
         </div>
     </div>
-
-
-
 
     <!-- <button id="hello">Say hello</button> -->
     <!-- <button>Click</button> -->

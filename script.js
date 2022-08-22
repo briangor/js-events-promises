@@ -10,35 +10,82 @@ let evt1_display = () => {
 
 evt1_btn.addEventListener('click', evt1_display);
 
+/* changing body backgound color */
+let evt2_btn = document.getElementById('evt2_btn');
+let evt2_output = document.getElementById('evt2_output');
+let evt2_btn2 = document.getElementById('evt2_btn2');
+
+function random(number) {
+    return Math.floor(Math.random() * (number + 1));
+}
+
+function changeBackground() {
+    const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+    evt2_btn.style.backgroundColor = rndCol;
+    evt2_output.innerHTML = rndCol;
+}
+
+evt2_btn.addEventListener('mouseover', changeBackground);
+
+evt2_btn2.addEventListener('click', function() {
+    evt2_btn.style.backgroundColor = '#3b82f6';    
+    evt2_output.innerHTML = '';
+});
+
 // Custom event
 /* Using the CustomEvent constructor*/
-// const myEvent = new CustomEvent("myevent", {
-//     detail: {name: 'hero'},
-//     bubbles: true,
-//     cancelable: true,
-//     composed: false,
-// });
-
-// document.querySelector("#evt2_btn").addEventListener("myevent", (event) => {
-//     console.log("I'm listening on a custom event");
-// document.querySelector("#evt2_output").dispatchEvent(myEvent);
-// });
-
-let evt2_output = document.getElementById('evt2_output');
-let evt2_btn = document.getElementById('evt2_btn');
-evt2_btn.addEventListener('click', function () {
-    const btn = document.getElementById('evt2_input');
+let c_evt1_output = document.getElementById('c_evt1_output');
+let c_evt1_btn = document.getElementById('c_evt1_btn');
+c_evt1_btn.addEventListener('click', function () {
+    const btn = document.getElementById('c_evt1_input');
     const myEvent = new CustomEvent("myCustomEvent", { detail: { hello: "World" } });
 
-    evt2_input.addEventListener("myCustomEvent", e => {
+    c_evt1_input.addEventListener("myCustomEvent", e => {
         console.log(e.detail) // { hello: "World" }
-        evt2_output.innerHTML = `Custom event fired. The data passed is ${JSON.stringify(e.detail)}`;
+        evt1_output.innerHTML = `Custom event fired. The data passed is ${JSON.stringify(e.detail)}`;
     });
 
-    evt2_input.dispatchEvent(myEvent);
+    c_evt1_input.dispatchEvent(myEvent);
+});
 
+
+// Dynamic Typing
+/* variable myvar can be assigned values of multiple types */
+let myvar;
+myvar = 0;
+console.log(myvar); // 0
+myvar = 'Hello world';
+console.log(myvar); // Hello world
+myvar = { 'key': 'value' };
+console.log(myvar); // {key:'value'}
+
+let dt_input = document.getElementById('dt_input');
+let dt_output = document.getElementById('dt_output');
+let dt_btn = document.getElementById('dt_btn');
+dt_btn.addEventListener('click', function () {
+    console.log(dt_input.value);
+    console.log(typeof dt_input.value);
+    console.log(`Type: ${typeof dt_input.value}, Value: ${JSON.stringify(dt_input.value)}`);
+    dt_output.innerHTML = `Type: ${typeof dt_input.value}, Value: ${JSON.stringify(dt_input.value)}`;
 
 });
+
+
+// Promise
+let p_btn = document.getElementById('p_btn');
+let p_input = document.getElementById('p_input');
+p_btn.addEventListener('click', function () {
+    const myPromise = new Promise(function (resolve, reject) {
+        setTimeout(function () { 
+            resolve(`Hello World! You typed: ${p_input.value}`); 
+        }, 3000);
+    });
+
+    myPromise.then(function (value) {
+        document.getElementById("p_output").innerHTML = value;
+    });
+});
+
 
 
 
