@@ -42,7 +42,7 @@ c_evt1_btn.addEventListener('click', function () {
 
     c_evt1_input.addEventListener("myCustomEvent", e => {
         console.log(e.detail) // { hello: "World" }
-        evt1_output.innerHTML = `Custom event fired. The data passed is ${JSON.stringify(e.detail)}`;
+        c_evt1_output.innerHTML = `Custom event fired. The data passed is ${JSON.stringify(e.detail)}`;
     });
 
     c_evt1_input.dispatchEvent(myEvent);
